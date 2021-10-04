@@ -1,7 +1,0 @@
-node_modules
-tweets
-activities
-.pnp*
-*.js
-*.js.map
-config.json
