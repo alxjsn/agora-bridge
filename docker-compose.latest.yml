@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   agora-bridge:
-    build: .
+    image: alxjsn/agora-bridge:latest
     volumes:
       - ./agora:/home/agora
 

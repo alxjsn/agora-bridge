@@ -1,0 +1,4 @@
+- target: alxjsn
+  url: https://github.com/alxjsn/garden.git
+  protocol: git
+  format: logseq

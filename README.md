@@ -2,30 +2,28 @@
 
 This repository includes a set of scripts and utilities to connect the Agora (https://anagora.org/go/agora) with the greater internet with a focus on personal knowledge graphs, the semantic web and social platforms.
 
-Currently supports digital gardens stored on [[git]], as per https://anagora.org/agora-protocol. Support for [[mastodon]] and [[twitter]] will be worked on next.
+Currently supports digital gardens stored on [[git]], as per https://anagora.org/agora-protocol.
 
 See https://anagora.org/node/an-agora for more.
 
-## Install
+**Note:** This is a fork of [agora-server](https://github.com/flancian/agora-bridge).
+
+## Development
 
 ```
-python3 -m venv venv
-. venv/bin/activate
-pip install -r requirements.txt
+docker-compose up --build -d
 ```
 
-## Usage
+## Production
 
-### Digital gardens
-
-The following is an example for a deployment in which both agora-bridge (this repository) and agora (https://github.com/flancian/agora) are in the home directory of the same user.
+To build a production Docker image, run the following command with modified tags if you'd like.
 
 ```
-. venv/bin/activate
-~/agora-bridge/pull.py --config ~/agora/gardens.yaml --output-dir ~/agora/garden 
+docker build . -t alxjsn/agora-bridge
 ```
 
+There is also an example docker-compose file included to run an Agora Birdge based on the latest image.
 
-### Social media
-
-Work in progress. See `bot` directory in this repository for system account code and [[agora bridge js]] in the Agora.
+```
+docker-compose -f docker-compose.latest.yml up -d
+```
