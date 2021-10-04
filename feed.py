@@ -20,33 +20,10 @@ import pprint
 
 DEBUG = True
 
-HYPOTHESIS_USERS = {
-        'flancian': 'flancian',
-        'diegodlh': 'diegodlh',
-        }
-
-HYPOTHESIS_TAGS = ['[[byzantine emperors]]']
-
 MASTODON_USERS = {
         'flancian': 'flancian',
         'diegodlh': 'diegodlh',
         }
-
-def get_user_feeds():
-    feeds = {}
-    for agora_user, hypothesis_user in HYPOTHESIS_USERS.items():
-        feeds[agora_user] = feedparser.parse(f'https://hypothes.is/stream.atom?user={hypothesis_user}')
-    return feeds
-
-def get_tag_feeds():
-    import urllib.parse
-    feeds = []
-    for tag in HYPOTHESIS_TAGS:
-        tag = urllib.parse.quote_plus(tag)
-        url = f'https://hypothes.is/stream.atom?tags={tag}'
-        print(url)
-        feeds.append(feedparser.parse(url))
-    return feeds
 
 def main():
     if DEBUG:
